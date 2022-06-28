@@ -4,6 +4,7 @@ import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 
 
+
 export default function App() {
 
     // State
@@ -26,8 +27,6 @@ export default function App() {
         } else if (!isActive && seconds !== 0) {
           clearInterval(interval);
         }
-        console.log(seconds)
-        console.log(isActive)
         return () => clearInterval(interval);
     }, [isActive, seconds]);
 
@@ -139,10 +138,13 @@ export default function App() {
     
     return (
         <main>
-            {tenzies ? <Confetti /> : ""}
+            {tenzies ? <Confetti
+                            width={window.innerWidth}
+                            height={window.innerHeight}
+            /> : ""}
             <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same. 
-            Click each die to freeze it at its current value between rolls.</p>
+            <p className="instructions">Roll until all dice are the same.Click each die to freeze it at its current value between rolls.</p>
+            
             <div className="dice-container">
                 {diceElements}
             </div>
@@ -155,7 +157,7 @@ export default function App() {
             <div className="score--container">
                 
                 <p className="best--time">Best Time: {bestTime} Seconds</p>
-                <p className="best--score">Current Score: {turns} Turns</p>
+                <p className="current--score">Current Score: {turns} Turns</p>
                 <p className="best--score">Best Score: {score} Turns</p>
             </div>
         </main>

@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -7,12 +9,13 @@ body {
     background-color: #0B2434;
     padding: 20px;
     font-family: 'Karla', sans-serif;
+    overflow: hidden;
 }
 
 main {
     background-color: #F5F5F5;
-    height: 400px;
-    max-width: 800px;
+    height: 450px;
+    max-width: 80%;
     border-radius: 5px;
     padding: 20px;
     display: flex;
@@ -20,6 +23,7 @@ main {
     justify-content: space-around;
     align-items: center;
     margin: auto;
+    margin-top: 5%;
 }
 
 .title {
@@ -46,14 +50,7 @@ main {
     width: 50px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-}
-
-.die-num {
-    font-size: 2rem;
 }
 
 .roll-dice {
@@ -86,6 +83,10 @@ main {
     margin-left: 5%;
 }
 
+.current--score{
+    font-weight: bold;
+}
+
 .score--container{
     width: 100%;
     margin-top:5px;
@@ -93,3 +94,291 @@ main {
     justify-content: space-between;
     align-items: center;
 }
+
+.face-1 {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.die{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.face-2 {
+    height: 50px;
+    width: 50px;
+    padding: 20%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.face-2 div:nth-of-type(2){
+    align-self: flex-end;
+}
+
+.face-3 {
+    height: 50px;
+    width: 50px;
+    padding: 20%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.face-3 div:nth-of-type(2){
+    align-self: center;
+}
+
+.face-3 div:nth-of-type(3){
+    align-self: flex-end;
+}
+
+.face-4 {
+    height: 50px;
+    width: 50px;
+    padding: 20%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.column{
+    display: flex;   
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.face-5 {
+    height: 50px;
+    width: 50px;
+    padding: 20%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.face-5 div:nth-child(2){
+    align-self: center;
+}
+
+.face-6 {
+    height: 50px;
+    width: 50px;
+    padding: 20%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.die-shaking{
+    animation-name:wobble;
+    animation-duration: 1s;
+}
+
+.dice-container div{
+    background-image: linear-gradient(#59E391, #59E391);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 50%;
+    transition: background-size .5s, color .5s;
+}
+
+.dice-container .die-face:hover{
+    background-size: 100% 100%;
+}
+
+/* Setting Animation effect to the  dice using css keyframe */
+@keyframes wobble {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    15% {
+          transform: translate3d(-25%, 0, 0) 
+            rotate3d(0, 0, 1, -5deg);
+        }
+    30% {
+        transform: translate3d(20%, 0, 0) 
+             rotate3d(0, 0, 1, 3deg);
+        }
+    45% {
+        transform: translate3d(-15%, 0, 0)
+            rotate3d(0, 0, 1, -3deg);
+        }
+    60% {
+          transform: translate3d(10%, 0, 0) 
+            rotate3d(0, 0, 1, 2deg);
+        }
+    75% {
+          transform: translate3d(-5%, 0, 0) 
+            rotate3d(0, 0, 1, -1deg);
+        }
+    to {
+          transform: translate3d(0, 0, 0);
+        }
+}
+
+area{
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -100px;
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 70%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 900px) {
+  
+    .best--time {
+        font-weight: 500;
+        font-size: 15px;
+        margin-left: 2px;
+    }
+
+    .current--score {
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .best--score {
+        font-weight: 500;
+        font-size: 15px;
+        margin-right: 2px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+  
+  }
+
