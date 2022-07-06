@@ -76,11 +76,13 @@ main {
 .best--score{
     font-weight: bold;
     margin-right: 5%;
+    margin-left: 5%;
 }
 
 .best--time{
     font-weight: bold;
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 .current--score{
@@ -360,25 +362,65 @@ area{
 @media only screen and (max-width: 900px) {
   
     .best--time {
-        font-weight: 500;
-        font-size: 15px;
-        margin-left: 2px;
+        margin-left: 0;
+        font-size: 12px;
     }
 
     .current--score {
-        font-weight: 500;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .best--score {
-        font-weight: 500;
-        font-size: 15px;
-        margin-right: 2px;
+        margin-right: 0px;
+        font-size: 12px;
     }
 
     p {
         font-size: 15px;
     }
+
+    main {
+        padding: 10px;
+        max-width: 95%;
+    }
+
+    body {
+        padding: 0;
+    }
   
+  }
+
+  @media only screen and (max-width: 400px){
+    main{
+        max-width: 98%;
+    }
+
+    .best--time {
+        font-size: 11px;
+    }
+
+    .current--score {
+        font-size: 11px;
+    }
+
+    .best--score {
+        font-size: 11px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .dice-container{
+        gap: 10px;
+    }
+
+    
+  }
+
+  @media only screen and (max-width: 300px){
+    .dice-container{
+        gap: 5px;
+    }
   }
 
