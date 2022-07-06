@@ -205,9 +205,6 @@ main {
     transition: background-size .5s, color .5s;
 }
 
-.dice-container .die-face:hover{
-    background-size: 100% 100%;
-}
 
 /* Setting Animation effect to the  dice using css keyframe */
 @keyframes wobble {
@@ -421,6 +418,12 @@ area{
   @media only screen and (max-width: 300px){
     .dice-container{
         gap: 5px;
+    }
+  }
+
+  @media (hover: hover){
+    .dice-container .die-face:hover{
+        background-size: 100% 100%;
     }
   }
 
